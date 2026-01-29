@@ -15,7 +15,6 @@
             margin: 0; font-family: 'Inter', sans-serif;
             background: #000; color: #fff;
             height: 100vh; display: flex; align-items: center; justify-content: center;
-            /* เปลี่ยนมาใช้รูปจาก Unsplash ที่ระบบไม่บล็อกแน่นอน */
             background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
             url('9a54f99fb64c83621965109df195764d.jpg');
             background-size: cover; background-position: center;
@@ -26,8 +25,6 @@
             background: var(--glass); backdrop-filter: blur(20px);
             border: 1px solid rgba(255,255,255,0.1); border-radius: 40px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            <button class="btn" onclick="openModal('music')" style="background: linear-gradient(45deg, #00A19B, #000); border: none;">DIVA'S PLAYLIST</button>
-            
         }
 
         .profile-img {
@@ -44,6 +41,7 @@
             background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);
             color: #fff; text-decoration: none; border-radius: 50px;
             font-size: 0.8rem; letter-spacing: 2px; cursor: pointer; transition: 0.3s;
+            border-style: solid;
         }
         .btn:hover { background: #fff; color: #000; transform: scale(1.05); }
 
@@ -75,22 +73,22 @@
         <button class="btn" onclick="openModal('about')">ABOUT THE DIVA</button>
         <button class="btn" onclick="openModal('rules')">THE PADDOCK RULES</button>
         <a href="https://www.instagram.com/gentle.rsl_63" class="btn">INSTAGRAM</a>
+        <button class="btn" onclick="openModal('music')" style="background: linear-gradient(45deg, #00A19B, #000); border: none;">DIVA'S PLAYLIST</button>
     </div>
+
     <div id="music" class="modal">
-    <div class="modal-content" style="background: linear-gradient(to bottom, #111, #000); border: 2px solid #00A19B;">
-        <span class="close-btn" onclick="closeModal('music')">&times;</span>
-        <div class="modal-h">MY CURRENT VIBE</div>
-        <p style="font-size: 0.7rem; color: #00A19B; letter-spacing: 2px; text-align: center;">UNMATCHED ENERGY</p>
-        
-        <iframe src="https://open.spotify.com/embed/track/5isS9BGIApPSI794m67vls?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="margin-bottom: 10px;"></iframe>
-        
-        <iframe src="https://open.spotify.com/embed/track/27NovPIjx9YnS0vAOv66tB?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-    </div>
+        <div class="modal-content" style="background: linear-gradient(to bottom, #111, #000); border: 2px solid #00A19B;">
+            <span class="close-btn" onclick="closeModal('music')">×</span>
+            <div class="modal-h">MY CURRENT VIBE</div>
+            <p style="font-size: 0.7rem; color: #00A19B; letter-spacing: 2px; text-align: center;">UNMATCHED ENERGY</p>
+            <iframe src="https://open.spotify.com/embed/track/1Y6968987GfH8CgC6L0wF9" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="margin-bottom: 10px;"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/27NovPIjxMTYmwd85SjR1i" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
     </div>
 
     <div id="about" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('about')">&times;</span>
+            <span class="close-btn" onclick="closeModal('about')">×</span>
             <div class="modal-h">IDENTITY</div>
             <div class="info-row"><b>NAME:</b> George Russell (63)</div>
             <div class="info-row"><b>BIRTH:</b> 15 Feb 1998</div>
@@ -102,7 +100,7 @@
 
     <div id="rules" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('rules')">&times;</span>
+            <span class="close-btn" onclick="closeModal('rules')">×</span>
             <div class="modal-h">RULES</div>
             <div class="info-row">1. มาแบบตัวแม่ กลับแบบตัวลูก (Be polite).</div>
             <div class="info-row">2. DM for Serious RP only.</div>
