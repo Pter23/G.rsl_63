@@ -3,144 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GR63 | The Diva of Mercedes</title>
+    <title>GR63 | THE DIVA TOP</title>
     <style>
         :root {
-            --mercedes-silver: #A6A6A6;
-            --petronas-green: #00A19B;
-            --luxury-black: #0A0A0A;
+            --petronas: #00A19B;
+            --silver: #A6A6A6;
+            --glass: rgba(255, 255, 255, 0.05);
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--luxury-black);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80'); /* พื้นหลังเบลอๆ */
-            background-size: cover;
-            background-attachment: fixed;
+            margin: 0; font-family: 'Inter', sans-serif;
+            background: #000; color: #fff;
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            /* พื้นหลังรถ Mercedes F1 ล่าสุด */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+            url('https://images.unsplash.com/photo-1662071607521-889811804251?q=80&w=2070');
+            background-size: cover; background-position: center;
         }
 
-        .container {
-            width: 90%;
-            max-width: 500px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px); /* จริตตัวแม่ต้องมีความกระจกใส */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        .main-card {
+            width: 350px; padding: 40px; text-align: center;
+            background: var(--glass); backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid var(--petronas-green);
-            margin-bottom: 20px;
-            object-fit: cover;
-            box-shadow: 0 0 20px var(--petronas-green);
+            width: 120px; height: 120px; border-radius: 50%;
+            border: 2px solid var(--petronas); margin-bottom: 20px;
+            box-shadow: 0 0 20px var(--petronas); object-fit: cover;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin: 10px 0;
-            letter-spacing: 5px;
-            background: linear-gradient(to right, #fff, var(--mercedes-silver));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        h1 { letter-spacing: 5px; font-weight: 300; margin: 10px 0; }
+        .tagline { color: var(--petronas); font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 30px; }
 
-        .subtitle {
-            font-style: italic;
-            color: var(--petronas-green);
-            margin-bottom: 30px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
+        .btn {
+            display: block; width: 100%; padding: 12px; margin: 10px 0;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);
+            color: #fff; text-decoration: none; border-radius: 50px;
+            font-size: 0.8rem; letter-spacing: 2px; cursor: pointer; transition: 0.3s;
         }
+        .btn:hover { background: #fff; color: #000; transform: scale(1.05); }
 
-        .bio-section {
-            text-align: left;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            border-left: 2px solid var(--petronas-green);
-            padding-left: 20px;
+        /* Modal / Pop-up System */
+        .modal {
+            display: none; position: fixed; z-index: 100; left: 0; top: 0;
+            width: 100%; height: 100%; background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px); align-items: center; justify-content: center;
         }
+        .modal-content {
+            background: #111; width: 85%; max-width: 400px;
+            padding: 30px; border-radius: 30px; border: 1px solid var(--petronas);
+            position: relative; animation: slideUp 0.4s ease;
+        }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 30px;
-        }
-
-        .stat-item b {
-            display: block;
-            font-size: 1.2rem;
-            color: var(--petronas-green);
-        }
-
-        .button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            background: transparent;
-            border: 1px solid white;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: 0.3s;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .button:hover {
-            background: white;
-            color: black;
-            transform: scale(1.05);
-        }
-
-        .footer {
-            font-size: 0.7rem;
-            margin-top: 20px;
-            opacity: 0.5;
-        }
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 20px; cursor: pointer; color: var(--petronas); }
+        .modal-h { color: var(--petronas); border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px; letter-spacing: 2px; }
+        .info-row { text-align: left; font-size: 0.85rem; line-height: 1.8; margin-bottom: 10px; color: #ccc; }
+        .info-row b { color: #fff; margin-right: 10px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <img src="https://path-to-your-image.jpg" alt="George Russell" class="profile-img">
-    <h1>RUSSELL</h1>
-    <div class="subtitle">THE DIVA OF MERCEDES</div>
-    
-    <div class="bio-section">
-        "I was forecast for a win, darling." <br>
-        63rd on the grid, 1st in the fashion lane. <br>
-        Professionalism with a touch of drama.
+    <div class="main-card">
+        <img src="https://i.pinimg.com/736x/8d/6a/0a/8d6a0a803f268b8e8f8f8f8f8f8f8f8f.jpg" class="profile-img">
+        <h1>RUSSELL</h1>
+        <div class="tagline">DIVA OF MERCEDES | THE ELITE TOP</div>
+        
+        <button class="btn" onclick="openModal('about')">ABOUT THE DIVA</button>
+        <button class="btn" onclick="openModal('rules')">THE PADDOCK RULES</button>
+        <a href="https://instagram.com/your_username" class="btn">INSTAGRAM</a>
     </div>
 
-    <div class="stats">
-        <div class="stat-item"><b>63</b> Number</div>
-        <div class="stat-item"><b>P1</b> Standard</div>
-        <div class="stat-item"><b>UK</b> Origin</div>
+    <div id="about" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('about')">&times;</span>
+            <div class="modal-h">IDENTITY</div>
+            <div class="info-row"><b>NAME:</b> George Russell (63)</div>
+            <div class="info-row"><b>BIRTH:</b> 15 Feb 1998</div>
+            <div class="info-row"><b>POSITION:</b> Dominant / Top (รุกตัวแม่)</div>
+            <div class="info-row"><b>LIKES:</b> Victory, Espresso, Sharp Suits, Winning.</div>
+            <div class="info-row"><b>DISLIKES:</b> Slow cars, Unprofessionalism, Messy hair.</div>
+            <div class="info-row"><b>PERSONALITY:</b> เนี้ยบทุกระเบียดนิ้ว มั่นใจในตัวเองสูง มีความ Diva แต่อยู่ในสนามคือเพชฌฆาต</div>
+        </div>
     </div>
 
-    <a href="#" class="button">The Rules of the Paddock</a>
-    <a href="#" class="button">Career Gallery</a>
-    <a href="#" class="button">Contact the Team</a>
+    <div id="rules" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('rules')">&times;</span>
+            <div class="modal-h">RULES</div>
+            <div class="info-row">1. มาแบบตัวแม่ กลับแบบตัวลูก (Be polite).</div>
+            <div class="info-row">2. DM for Serious RP or Business only.</div>
+            <div class="info-row">3. No NC in Public, keep it classy.</div>
+            <div class="info-row">4. "I'm the one who leads, always."</div>
+        </div>
+    </div>
 
-    <div class="footer">© 2026 GEORGE RUSSELL ROLEPLAY. ALL RIGHTS RESERVED.</div>
-</div>
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = "flex"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) { if (event.target.className === 'modal') { event.target.style.display = "none"; } }
+    </script>
 
 </body>
 </html>
