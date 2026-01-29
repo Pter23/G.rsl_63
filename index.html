@@ -15,9 +15,9 @@
             margin: 0; font-family: 'Inter', sans-serif;
             background: #000; color: #fff;
             height: 100vh; display: flex; align-items: center; justify-content: center;
-            /* พื้นหลังรถ Mercedes F1 ล่าสุด */
+            /* แก้ไขลิงก์พื้นหลังเป็น Direct Link แล้วครับ */
             background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
-            url('https://pin.it/3MlCPPEIq');
+            url('https://i.pinimg.com/originals/30/0b/40/300b40e791206689d71c48006d649931.jpg');
             background-size: cover; background-position: center;
         }
 
@@ -45,7 +45,6 @@
         }
         .btn:hover { background: #fff; color: #000; transform: scale(1.05); }
 
-        /* Modal / Pop-up System */
         .modal {
             display: none; position: fixed; z-index: 100; left: 0; top: 0;
             width: 100%; height: 100%; background: rgba(0,0,0,0.9);
@@ -67,7 +66,7 @@
 <body>
 
     <div class="main-card">
-        <img src="https://uk.pinterest.com/pin/george-russell--9148005520258598/" class="profile-img">
+        <img src="https://i.pinimg.com/originals/9f/8e/0a/9f8e0a803f268b8e8f8f8f8f8f8f8f8f.jpg" class="profile-img">
         <h1>RUSSELL</h1>
         <div class="tagline">DIVA OF MERCEDES | THE ELITE TOP</div>
         
@@ -105,6 +104,5 @@
         function closeModal(id) { document.getElementById(id).style.display = "none"; }
         window.onclick = function(event) { if (event.target.className === 'modal') { event.target.style.display = "none"; } }
     </script>
-
 </body>
 </html>
