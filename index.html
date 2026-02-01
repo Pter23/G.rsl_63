@@ -75,17 +75,23 @@
         <button class="btn" onclick="openModal('music')" style="background: linear-gradient(45deg, #00A19B, #000); border: none;">DIVA'S PLAYLIST</button>
     </div>
 
-    <div id="music" class="modal">
-        <div class="modal-content" style="background: linear-gradient(to bottom, #111, #000); border: 2px solid #00A19B;">
-            <span class="close-btn" onclick="closeModal('music')">×</span>
-            <div class="modal-h">MY CURRENT VIBE</div>
-            <p style="font-size: 0.7rem; color: #00A19B; letter-spacing: 2px; text-align: center; margin-bottom: 15px;">UNMATCHED ENERGY</p>
-            
-            <iframe style="border-radius:12px; margin-bottom: 10px;" src="https://open.spotify.com/embed/track/2qOm7ukrhuAyZNoJi1Td3M?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6ocbgoVGwYJhO1vYg9q1W0?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
+<div id="music" class="modal">
+    <div class="modal-content" style="background: linear-gradient(to bottom, #111, #000); border: 2px solid #00A19B;">
+        <span class="close-btn" onclick="closeModal('music')">×</span>
+
+        <div class="modal-h">MY CURRENT VIBE</div>
+        <p style="font-size: 0.7rem; color: #00A19B; letter-spacing: 2px; text-align: center; margin-bottom: 15px;">
+            THE OFFICIAL DIVA PLAYLIST ✦ POWER • ATTITUDE • SPEED
+        </p>
+
+        <iframe style="border-radius:12px" 
+        src="https://open.spotify.com/embed/playlist/2uxTB1DHKjiwZuc0Mtk5TZ?utm_source=generator&theme=0" 
+        width="100%" height="380" frameBorder="0" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy"></iframe>
+
     </div>
+</div>
 
     <script>
         function openModal(id) { document.getElementById(id).style.display = "flex"; }
