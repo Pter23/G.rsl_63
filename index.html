@@ -4,20 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GR63 | THE DIVA TOP</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --petronas: #00A19B;
+            --silver: #A6A6A6;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0; font-family: 'Inter', sans-serif;
+            background: #000; color: #fff;
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+            url('9a54f99fb64c83621965109df195764d.jpg');
+            background-size: cover; background-position: center;
+        }
+
+        .main-card {
+            width: 350px; padding: 40px; text-align: center;
+            background: var(--glass); backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .profile-img {
+            width: 120px; height: 120px; border-radius: 50%;
+            border: 2px solid var(--petronas); margin-bottom: 20px;
+            box-shadow: 0 0 20px var(--petronas); object-fit: cover;
+        }
+
+        h1 { letter-spacing: 5px; font-weight: 300; margin: 10px 0; }
+        .tagline { color: var(--petronas); font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 30px; }
+
+        .btn {
+            display: block; width: 100%; padding: 12px; margin: 10px 0;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);
+            color: #fff; text-decoration: none; border-radius: 50px;
+            font-size: 0.8rem; letter-spacing: 2px; cursor: pointer; transition: 0.3s;
+        }
+        .btn:hover { background: #fff; color: #000; transform: scale(1.05); }
+
+        .modal {
+            display: none; position: fixed; z-index: 100; left: 0; top: 0;
+            width: 100%; height: 100%; background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px); align-items: center; justify-content: center;
+        }
+        .modal-content {
+            background: #111; width: 85%; max-width: 400px;
+            padding: 30px; border-radius: 30px; border: 1px solid var(--petronas);
+            position: relative; animation: slideUp 0.4s ease;
+        }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 20px; cursor: pointer; color: var(--petronas); }
+        .modal-h { color: var(--petronas); border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px; letter-spacing: 2px; }
+        .info-row { text-align: left; font-size: 0.85rem; line-height: 1.8; margin-bottom: 10px; color: #ccc; }
+        .info-row b { color: #fff; margin-right: 10px; }
+    </style>
 </head>
-<body class="hero-bg">
+<body>
 
     <div class="main-card">
-        <img src="profile.jpg" class="profile-img">
+        <img src="8c77e39ae6d337857384ab8f8cdfa2e4.jpg" class="profile-img">
         <h1>RUSSELL</h1>
         <div class="tagline">DIVA OF MERCEDES | THE ELITE TOP</div>
         
-        <a href="about.html" class="btn">ABOUT THE DIVA</a>
-        <a href="rules.html" class="btn">THE PADDOCK RULES</a>
+        <button class="btn" onclick="openModal('about')">ABOUT THE DIVA</button>
+        <button class="btn" onclick="openModal('rules')">THE PADDOCK RULES</button>
         <a href="https://www.instagram.com/gentle.rsl_63" class="btn">INSTAGRAM</a>
-        <a href="playlist.html" class="btn special">DIVA'S PLAYLIST</a>
+        <button class="btn" onclick="openModal('music')" style="background: linear-gradient(45deg, #00A19B, #000); border: none;">DIVA'S PLAYLIST</button>
     </div>
 
-</body>
-</html>
+    <div id="music" class="modal">
+        <div class="modal-content" style="background: linear-gradient(to bottom, #111, #000); border: 2px solid #00A19B;">
+            <span class="close-btn" onclick="closeModal('music')">×</span>
+            <div class="modal-h">MY CURRENT VIBE</div>
+            <p style="font-size: 0.7rem; color: #00A19B; letter-spacing: 2px; text-align: center; margin-bottom: 15px;">UNMATCHED ENERGY</p>
+            
+            <iframe style="border-radius:12px; margin-bottom: 10px;" src="https://open.spotify.com/embed/track/2qOm7ukrhuAyZNoJi1Td3M?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6ocbgoVGwYJhO1vYg9q1W0?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <div id="about" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('about')">×</span>
+            <div class="modal-h">IDENTITY</div>
+            <div class="info-row"><b>NAME:</b> George Russell (63)</div>
+            <div class="info-r
