@@ -1,0 +1,120 @@
+/* --- GLOBAL --- */
+body.about-bg {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    background: url('c32ec91ae6345a7984da34ead68d3847.jpg') no-repeat center/cover;
+    backdrop-filter: blur(3px);
+}
+
+/* --- MAGAZINE HEADER --- */
+.mag-header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.mag-title {
+    font-size: 1.1rem;
+    letter-spacing: 5px;
+    color: #00e6d2;
+    margin-bottom: 5px;
+}
+
+.mag-sub {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+/* --- PROFILE MAIN SECTION --- */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.about-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 0 30px #00e6d2;
+    margin-bottom: 25px;
+}
+
+.info-block {
+    background: rgba(0,0,0,0.55);
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    border: 1px solid rgba(0,255,230,0.3);
+}
+
+.section-title {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.mint {
+    color: #00e6d2;
+}
+
+/* --- PERSONALITY BOX --- */
+.p-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,255,230,0.3);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.p-box p {
+    margin: 8px 0;
+}
+
+/* --- LIKES & DISLIKES --- */
+.detail-grid {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    gap: 20px;
+}
+
+.mint-sub {
+    color: #00e6d2;
+    margin-bottom: 10px;
+}
+
+/* --- RELATIONSHIP --- */
+.relationship-text {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.highlight {
+    color: #00e6d2;
+    font-weight: bold;
+}
+
+/* --- FOOTER --- */
+.footer {
+    text-align: center;
+    padding: 30px;
+}
+
+.back-home {
+    color: #00e6d2;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
