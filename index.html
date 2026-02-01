@@ -69,7 +69,7 @@
         <h1>RUSSELL</h1>
         <div class="tagline">DIVA OF MERCEDES | THE ELITE TOP</div>
         
-        <button class="btn" onclick="openModal('about')">ABOUT THE DIVA</button>
+        <a href="about.html" class="btn">ABOUT THE DIVA</a>
         <button class="btn" onclick="openModal('rules')">THE PADDOCK RULES</button>
         <a href="https://www.instagram.com/gentle.rsl_63" class="btn">INSTAGRAM</a>
         <button class="btn" onclick="openModal('music')" style="background: linear-gradient(45deg, #00A19B, #000); border: none;">DIVA'S PLAYLIST</button>
@@ -92,4 +92,27 @@
             <span class="close-btn" onclick="closeModal('about')">×</span>
             <div class="modal-h">IDENTITY</div>
             <div class="info-row"><b>NAME:</b> George Russell (63)</div>
-            <div class="info-r
+            <div class="info-row"><b>BIRTH:</b> 15 Feb 1998</div>
+            <div class="info-row"><b>POSITION:</b> Dominant / Top (รุกตัวแม่)</div>
+            <div class="info-row"><b>LIKES:</b> Victory, Espresso, Sharp Suits.</div>
+            <div class="info-row"><b>PERSONALITY:</b> Diva, Perfectionist, Aggressive on track.</div>
+        </div>
+    </div>
+
+    <div id="rules" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('rules')">×</span>
+            <div class="modal-h">RULES</div>
+            <div class="info-row">1. มาแบบตัวแม่ กลับแบบตัวลูก (Be polite).</div>
+            <div class="info-row">2. DM for Serious RP only.</div>
+            <div class="info-row">3. No NC in Public.</div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = "flex"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) { if (event.target.className === 'modal') { event.target.style.display = "none"; } }
+    </script>
+</body>
+</html>
